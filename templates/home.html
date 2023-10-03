@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/homestyle.css">
+    <title>Student Result Dashboard</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="profile">
+            <h2>Student Profile</h2>
+            <div class="profile-info">
+                <p><strong>Name:</strong> {{data[0][9]}}<p>
+                <p><strong>Roll Number:</strong> {{data[0][2]}}</p>
+                <p><strong>Department:</strong> {{data[0][19]}}</p>
+            </div>
+        </div>
+        <div class="marks">
+            <h2>Marks scored in each subject</h2>
+            <table>
+                <tr>
+                    <th>Subject {{data[0][21]}}</th>
+                    <th>Marks</th>
+                </tr>
+                {% for info in data[0] %}
+                <tr>
+                    <td>{{info[21]}}</td>
+                    <td>{{info[6]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+
